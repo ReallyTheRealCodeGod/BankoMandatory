@@ -1,0 +1,3 @@
+C:/Users/liljd/CLionProjects/BankoMandatory/cmake-build-debug/CMakeFiles/BankoMandatory.dir
+C:/Users/liljd/CLionProjects/BankoMandatory/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/liljd/CLionProjects/BankoMandatory/cmake-build-debug/CMakeFiles/rebuild_cache.dir

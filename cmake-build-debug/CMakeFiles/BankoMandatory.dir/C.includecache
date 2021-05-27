@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/liljd/CLionProjects/BankoMandatory/main.c
+stdio.h
+-
+stdlib.h
+-
+accctrl.h
+-
+time.h
+-
+
