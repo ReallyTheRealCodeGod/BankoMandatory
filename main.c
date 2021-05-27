@@ -20,7 +20,7 @@ int* uniqueIntArrayGenerator(int min, int max, int sizeOfArray);
 
 //prints bankoPlate given an array holding the bankoPlate numbers,
 //the size/length of the array and the amount of rows on the plate.
-void printBankoPlate(int *arr, int size, int numberOfRows);
+void printBankoPlate(int *arrPointer, int size, int numberOfRows);
 
 void newArr(int numberOfBankoPlates, int sizeBankoPlateArray, int rowAmount, int rowLength,
             struct bankoPlate *allBankoPlates);
@@ -280,19 +280,20 @@ int* uniqueIntArrayGenerator(int min, int max, int size) {
 
 }
 
-void printBankoPlate(int *arr, int size, int numberOfRows){
+void printBankoPlate(int *arrPointer, int size, int numberOfRows){
 
+    int *serialMonitorArr = arrPointer;
     int amountOfFieldsInColumn = size/numberOfRows;
 
     for(int i = 1;  i <= size; i++) {
-        if(*arr > amountOfFieldsInColumn){
-            printf("|%d", *arr);
-        }else if(*arr == '\0') {
+        if(*arrPointer > amountOfFieldsInColumn){
+            printf("|%d", *arrPointer);
+        }else if(*arrPointer == '\0') {
             printf("|  ");
         }else{
-            printf("| %d", *arr);
+            printf("| %d", *arrPointer);
         }
-        arr++;
+        arrPointer++;
         if(i%amountOfFieldsInColumn==0){
             printf("|\n");
             for(int k = 0; k < amountOfFieldsInColumn; k++){
@@ -302,7 +303,21 @@ void printBankoPlate(int *arr, int size, int numberOfRows){
         }
     }
 
-    free(arr);
-    arr = NULL;
+    //print out the array, in a easy format for the arduino Serial Monitor to handle with a delimiter
+    for(int i = 0; i < size; i++)
+    {
+        if(serialMonitorArr[i] == NULL) {
+            printf("NULL");
+        }else{
+            printf("%d", serialMonitorArr[i]);
+        }
+        if(i < size-1){
+            printf(";");
+        }
+
+    }
+
+    free(arrPointer);
+    arrPointer = NULL;
 }
 
