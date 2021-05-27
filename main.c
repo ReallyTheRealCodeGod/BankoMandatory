@@ -303,11 +303,13 @@ void printBankoPlate(int *arrPointer, int size, int numberOfRows){
         }
     }
 
+    puts("");
     //print out the array, in a easy format for the arduino Serial Monitor to handle with a delimiter
     for(int i = 0; i < size; i++)
     {
+
         if(serialMonitorArr[i] == NULL) {
-            printf("NULL");
+            printf("N");
         }else{
             printf("%d", serialMonitorArr[i]);
         }
