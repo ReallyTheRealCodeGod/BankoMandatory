@@ -95,25 +95,16 @@ int getIndexInArray(int column, int row) {
 //takes an ID, an int to alocate the size of the array and the
 bankoPlate makeBankoPlate(int ID, int lengthOfBankoPlate, int rowAmount) {
 
-
     //clears previous array of numbers, so that a new one can be added
     int *arr = malloc(sizeof(int) * lengthOfBankoPlate);
 
-
     for(int rowindex = 0; rowindex < lengthOfBankoPlate; rowindex++)
     {
-        arr[rowindex] = NULL;
+        arr[rowindex] = -1;
     }
 
 
-
-//array er 27 lang, har 9 tal i hver række og 3 tal i hver kollonne
-//
-
-
 // how to implement the getIndexInArray function when assigning, arr[getIndexInArray(column,row)] = 1;
-
-
 
 //assign each row 5 numbers, in a random place on the row
  for(int i = 1; i <= 3; i++) {
@@ -135,14 +126,6 @@ bankoPlate makeBankoPlate(int ID, int lengthOfBankoPlate, int rowAmount) {
      free(arrRandomIndex);
      arrRandomIndex = NULL;
  }
-    // how to implement the getIndexInArray function when assigning, arr[getIndexInArray(column,row)] = 1;
-
-    //sort the rows, so there are 1 number in each column
-
-
-    //while(noEmptyColumn == 0) {
-//
-
 
         for (int iColumn = 1; iColumn <= 9; iColumn++) { //goes through the columns
 
@@ -152,7 +135,7 @@ bankoPlate makeBankoPlate(int ID, int lengthOfBankoPlate, int rowAmount) {
 
                 int isItLessThanOne = 0; //flag that is used to check if the column has atleast 1 number
 
-                if (arr[getIndexInArray(iColumn, iRow)] != NULL) { //conditional statement that helps to keep a record on how many fields in the column that has a value
+                if (arr[getIndexInArray(iColumn, iRow)] != -1) { //conditional statement that helps to keep a record on how many fields in the column that has a value
                     isItLessThanOne++;
                 }
                 if (isItLessThanOne == 0 && iRow == 3) // if the amount of numbers in the fields in the column is less than one (that it is zero),
@@ -167,16 +150,16 @@ bankoPlate makeBankoPlate(int ID, int lengthOfBankoPlate, int rowAmount) {
 
 
                             if (arr[getIndexInArray(jColumn, jRow)] !=
-                                NULL) { // conditional statement, that keeps a track of how many fields that the column has
+                                -1) { // conditional statement, that keeps a track of how many fields that the column has
                                 moreThanOne++;
                             }
 
                             if (moreThanOne > 1 && arr[getIndexInArray(jColumn, iRow)] !=
-                                                   NULL) { //if it has more than one field in the column, and it its value in the row is not null.
+                                                   -1) { //if it has more than one field in the column, and it its value in the row is not null.
                                 // !Be aware that it only checks the last row in every column. iRow
 
                                 arr[getIndexInArray(iColumn, iRow)] = arr[getIndexInArray(jColumn, iRow)]; // assign the last row in the column that is missing a field, from the column that has more than one field assigned
-                                arr[getIndexInArray(jColumn, iRow)] = NULL; // set the column that changed column to NULL
+                                arr[getIndexInArray(jColumn, iRow)] = -1; // set the column that changed column to NULL
                                 goto test;
 
                             }
@@ -205,13 +188,11 @@ bankoPlate makeBankoPlate(int ID, int lengthOfBankoPlate, int rowAmount) {
             {7,9},
     };
 
-
-
     for (int jColumn = 1; jColumn <= 9; jColumn++) { // go through every column on the banko plate array
 
         for (int jRow = 1; jRow <= 3; jRow++) { // go through each row in the column
 
-                     if(arr[getIndexInArray(jColumn, jRow)] != NULL)
+                     if(arr[getIndexInArray(jColumn, jRow)] != -1)
                      {
 
                           int *test = uniqueIntArrayGenerator(rowNumberRanges[jRow-1][0], rowNumberRanges[jRow-1][1],1);
@@ -232,9 +213,6 @@ bankoPlate makeBankoPlate(int ID, int lengthOfBankoPlate, int rowAmount) {
 
         }
 
-
-
-
     bankoPlate newBankoPlate;
     newBankoPlate.bankoPlateIDNumber = ID;
     
@@ -251,7 +229,7 @@ void printBankoPlate(int *arrPointer, int size, int numberOfRows){
     for(int i = 1;  i <= size; i++) {
         if(*arrPointer > amountOfFieldsInColumn){
             printf("|%d", *arrPointer);
-        }else if(*arrPointer == '\0') {
+        }else if(*arrPointer == -1) {
             printf("|  ");
         }else{
             printf("| %d", *arrPointer);
@@ -273,7 +251,7 @@ void printBankoPlate(int *arrPointer, int size, int numberOfRows){
     for(int i = 0; i < size; i++)
     {
 
-        if(serialMonitorArr[i] == NULL) {
+        if(serialMonitorArr[i] == -1) {
             printf("-1");
         }else{
             printf("%d", serialMonitorArr[i]);
