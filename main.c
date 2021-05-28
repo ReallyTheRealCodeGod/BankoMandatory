@@ -177,12 +177,9 @@ bankoPlate makeBankoPlate(int ID, int lengthOfBankoPlate, int rowAmount) {
                             if (moreThanOne > 1 && arr[getIndexInArray(jColumn, iRow)] !=
                                                    NULL) { //if it has more than one field in the column, and it its value in the row is not null.
                                 // !Be aware that it only checks the last row in every column. iRow
-                                puts("test");
 
                                 arr[getIndexInArray(iColumn, iRow)] = arr[getIndexInArray(jColumn, iRow)]; // assign the last row in the column that is missing a field, from the column that has more than one field assigned
-                                printf("%d", arr[getIndexInArray(iColumn, iRow)]);
                                 arr[getIndexInArray(jColumn, iRow)] = NULL; // set the column that changed column to NULL
-                                                    printf("%d", arr[getIndexInArray(iColumn, iRow)]);
                                 goto test;
 
                             }
@@ -198,7 +195,7 @@ bankoPlate makeBankoPlate(int ID, int lengthOfBankoPlate, int rowAmount) {
             }
 
             test:
-            puts("goto");
+            printf("");
 
         }
 
@@ -309,12 +306,12 @@ void printBankoPlate(int *arrPointer, int size, int numberOfRows){
     {
 
         if(serialMonitorArr[i] == NULL) {
-            printf("N");
+            printf("-1");
         }else{
             printf("%d", serialMonitorArr[i]);
         }
         if(i < size-1){
-            printf(";");
+            printf(",");
         }
 
     }
