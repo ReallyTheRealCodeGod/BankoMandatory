@@ -169,6 +169,33 @@ main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BankoMandatory.dir\build.make CMakeFiles/BankoMandatory.dir/main.c.s
 .PHONY : main.c.s
 
+uniqueIntArrayGeneration.obj: uniqueIntArrayGeneration.c.obj
+
+.PHONY : uniqueIntArrayGeneration.obj
+
+# target to build an object file
+uniqueIntArrayGeneration.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BankoMandatory.dir\build.make CMakeFiles/BankoMandatory.dir/uniqueIntArrayGeneration.c.obj
+.PHONY : uniqueIntArrayGeneration.c.obj
+
+uniqueIntArrayGeneration.i: uniqueIntArrayGeneration.c.i
+
+.PHONY : uniqueIntArrayGeneration.i
+
+# target to preprocess a source file
+uniqueIntArrayGeneration.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BankoMandatory.dir\build.make CMakeFiles/BankoMandatory.dir/uniqueIntArrayGeneration.c.i
+.PHONY : uniqueIntArrayGeneration.c.i
+
+uniqueIntArrayGeneration.s: uniqueIntArrayGeneration.c.s
+
+.PHONY : uniqueIntArrayGeneration.s
+
+# target to generate assembly for a file
+uniqueIntArrayGeneration.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BankoMandatory.dir\build.make CMakeFiles/BankoMandatory.dir/uniqueIntArrayGeneration.c.s
+.PHONY : uniqueIntArrayGeneration.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -181,6 +208,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... uniqueIntArrayGeneration.obj
+	@echo ... uniqueIntArrayGeneration.i
+	@echo ... uniqueIntArrayGeneration.s
 .PHONY : help
 
 

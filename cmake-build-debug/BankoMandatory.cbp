@@ -77,6 +77,12 @@
 		<Unit filename="C:/Users/liljd/CLionProjects/BankoMandatory/main.c">
 			<Option target="BankoMandatory"/>
 		</Unit>
+		<Unit filename="C:/Users/liljd/CLionProjects/BankoMandatory/uniqueIntArrayGeneration.c">
+			<Option target="BankoMandatory"/>
+		</Unit>
+		<Unit filename="C:/Users/liljd/CLionProjects/BankoMandatory/uniqueIntArrayGeneration.h">
+			<Option target="BankoMandatory"/>
+		</Unit>
 		<Unit filename="C:/Users/liljd/CLionProjects/BankoMandatory/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

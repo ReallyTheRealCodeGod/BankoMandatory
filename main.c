@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <accctrl.h>
 #include <time.h>
+#include "uniqueIntArrayGeneration.h" //custom header file, to show you I can du it
 
 
 typedef struct bankoPlate{
@@ -15,9 +15,6 @@ typedef struct bankoPlate{
 //insert ID
 bankoPlate makeBankoPlate(int ID, int sizeOfArray, int rowAmount);
 
-//insert three ints; minimum, maximum and length of array
-int* uniqueIntArrayGenerator(int min, int max, int sizeOfArray);
-
 //prints bankoPlate given an array holding the bankoPlate numbers,
 //the size/length of the array and the amount of rows on the plate.
 void printBankoPlate(int *arrPointer, int size, int numberOfRows);
@@ -28,10 +25,10 @@ void newArr(int numberOfBankoPlates, int sizeBankoPlateArray, int rowAmount, int
 int main() {
 
     int numberOfBankoPlates = 1; // total amount of bankoplates printed to the terminal
-    int sizeBankoPlateArray = 27; // total number of digits on each bankoplate
+    int sizeBankoPlateArray = 27; // total number of digits on each bankoplates
     int rowAmount = 3; //number of rows on the bankoplates
     int rowLength = 0; //the length of each row
-    srand(time(NULL));//
+    srand(time(NULL));//makes a new seed to the random function
 
     //calculates the length of each individual row on the banko plate
     rowLength = sizeBankoPlateArray/rowAmount;
@@ -214,12 +211,6 @@ bankoPlate makeBankoPlate(int ID, int lengthOfBankoPlate, int rowAmount) {
 
         for (int jRow = 1; jRow <= 3; jRow++) { // go through each row in the column
 
-//                arr[getIndexInArray(iColumn, iRow)] = arr[getIndexInArray(jColumn, iRow)]; // assign the last row in the column that is missing a field, from the column that has more than one field assigned
-//                printf("%d", arr[getIndexInArray(iColumn, iRow)]);
-//                arr[getIndexInArray(jColumn, iRow)] = NULL; // set the column that changed column to NULL
-//                printf("%d", arr[getIndexInArray(iColumn, iRow)]);
-//                goto test;
-
                      if(arr[getIndexInArray(jColumn, jRow)] != NULL)
                      {
 
@@ -252,31 +243,6 @@ bankoPlate makeBankoPlate(int ID, int lengthOfBankoPlate, int rowAmount) {
     return newBankoPlate;
 }
 
-//returns an array of integers, where every decimal in the array, has a value between min and max.
-//it has checking algorithm, that insures every value is unique
-int* uniqueIntArrayGenerator(int min, int max, int size) {
-
-    int *new_arr = malloc(sizeof(int) * size);
-
-    //Hvis jeg beslutter at jeg vil lave en array, med alle værdier jeg skal bruge
-    //så skal jeg lave et tjek for om jeg har alle værdier i henholdsvis alle columns
-
-
-    for (int i = 0; i < size; i++) {
-        int num = (rand() % (max - min + 1)) + min;
-        new_arr[i] = num;
-        for(int j = 0; j < i; j++)
-        {
-            if(new_arr[j] == num) {
-                i--;
-            }
-        }
-    }
-    return new_arr;
-
-
-}
-
 void printBankoPlate(int *arrPointer, int size, int numberOfRows){
 
     int *serialMonitorArr = arrPointer;
@@ -300,8 +266,10 @@ void printBankoPlate(int *arrPointer, int size, int numberOfRows){
         }
     }
 
-    puts("");
+    puts("\n");
+
     //print out the array, in a easy format for the arduino Serial Monitor to handle with a delimiter
+    puts("this is the line that is put into the Arduino Serial Monitor");
     for(int i = 0; i < size; i++)
     {
 
@@ -313,8 +281,8 @@ void printBankoPlate(int *arrPointer, int size, int numberOfRows){
         if(i < size-1){
             printf(",");
         }
-
     }
+    puts("");
 
     free(arrPointer);
     arrPointer = NULL;

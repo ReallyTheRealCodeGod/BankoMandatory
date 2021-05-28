@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/liljd/CLionProjects/BankoMandatory/main.c" "C:/Users/liljd/CLionProjects/BankoMandatory/cmake-build-debug/CMakeFiles/BankoMandatory.dir/main.c.obj"
+  "C:/Users/liljd/CLionProjects/BankoMandatory/uniqueIntArrayGeneration.c" "C:/Users/liljd/CLionProjects/BankoMandatory/cmake-build-debug/CMakeFiles/BankoMandatory.dir/uniqueIntArrayGeneration.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "BankoMandatory.exe.manifest"
   "BankoMandatory.pdb"
   "CMakeFiles/BankoMandatory.dir/main.c.obj"
+  "CMakeFiles/BankoMandatory.dir/uniqueIntArrayGeneration.c.obj"
   "libBankoMandatory.dll.a"
 )
 

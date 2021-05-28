@@ -93,12 +93,12 @@ clean: CMakeFiles/BankoMandatory.dir/clean
 CMakeFiles/BankoMandatory.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BankoMandatory.dir\build.make CMakeFiles/BankoMandatory.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BankoMandatory.dir\build.make CMakeFiles/BankoMandatory.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\liljd\CLionProjects\BankoMandatory\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target BankoMandatory"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\liljd\CLionProjects\BankoMandatory\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target BankoMandatory"
 .PHONY : CMakeFiles/BankoMandatory.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/BankoMandatory.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\liljd\CLionProjects\BankoMandatory\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\liljd\CLionProjects\BankoMandatory\cmake-build-debug\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/BankoMandatory.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\liljd\CLionProjects\BankoMandatory\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/BankoMandatory.dir/rule
